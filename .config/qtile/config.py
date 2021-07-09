@@ -114,7 +114,7 @@ colours = {
 }
 
 layouts = [
-    layout.Columns(border_focus_stack='#d75f5f'),
+    layout.Columns(border_focus_stack=colours['purple']),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -157,17 +157,22 @@ screens = [
                     this_current_screen_border = colours['cyan']
                 ),
                 default_sep,
-                widget.CheckUpdates(no_update_string='System to date',colour_no_updates=colours['active'],colour_have_updates=colours['orange'], distro="Arch_yay"),
+                widget.CheckUpdates(no_update_string='System up to date',colour_no_updates=colours['active'],colour_have_updates=colours['orange'],custom_command='yay -Qu'),
                 default_sep,
                 widget.Prompt(foreground=colours['yellow']),
                 widget.Spacer(
                     length=bar.STRETCH,
                 ),
+                widget.WindowName(foreground=colours['purple']),
+                widget.Spacer(
+                    length=bar.STRETCH,
+                ),
                 default_sep,
-                widget.Volume(),
+                widget.Volume(foreground=colours['cyan']),
+                default_sep,
                 widget.Clock(format='%Y-%m-%d %a %H:%M:%S',foreground=colours['pink']),
                 default_sep,
-                widget.Battery(padding=6,format='{char} {percent:2.0%} {hour:d}:{min:02d}', foreground=colours['green'], low_foreground=colours['red'], low_percentage=0.2),
+                widget.Battery(padding=6,format='{char} {percent:2.0%} {hour:d}:{min:02d}', foreground=colours['green'], low_foreground=colours['red'], low_percentage=0.2,discharge_char='🔋',charge_char='⚡',update_interval=5),
             ],
             48,
         ),
