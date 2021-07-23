@@ -114,7 +114,7 @@ colours = {
 }
 
 layouts = [
-    layout.Columns(border_focus_stack=colours['purple']),
+    layout.Columns(border_focus_stack=colours['cyan'], border_focus=colours['purple']),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -157,7 +157,7 @@ screens = [
                     this_current_screen_border = colours['cyan']
                 ),
                 default_sep,
-                widget.CheckUpdates(no_update_string='System up to date',colour_no_updates=colours['active'],colour_have_updates=colours['orange'],custom_command='yay -Qu'),
+                widget.TextBox(text="Don't forget to yay",foreground=colours['orange']),
                 default_sep,
                 widget.Prompt(foreground=colours['yellow']),
                 widget.Spacer(
