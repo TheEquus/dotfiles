@@ -34,6 +34,8 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 terminal = guess_terminal()
 
+high_dpi = False
+
 keys = [
     # Switch between windows
     Key([mod], "j", lazy.layout.left(), desc="Move focus to left"),
@@ -131,7 +133,7 @@ layouts = [
 
 widget_defaults = dict(
     font='Anonymous Pro',
-    fontsize=30,
+    fontsize=30 if high_dpi else 15,
     padding=10,
     background=colours['background'],
     foreground=colours['foreground'],
@@ -174,7 +176,7 @@ screens = [
                 default_sep,
                 widget.Battery(padding=6,format='{char} {percent:2.0%} {hour:d}:{min:02d}', foreground=colours['green'], low_foreground=colours['red'], low_percentage=0.2,discharge_char='🔋',charge_char='⚡',update_interval=5),
             ],
-            48,
+            48 if high_dpi else 24,
         ),
     ),
 ]
