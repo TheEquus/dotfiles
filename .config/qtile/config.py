@@ -170,7 +170,7 @@ screens = [
                     length=bar.STRETCH,
                 ),
                 default_sep,
-                widget.Volume(foreground=colours['cyan']),
+                widget.PulseVolume(foreground=colours['cyan']),
                 default_sep,
                 widget.Clock(format='%Y-%m-%d %a %H:%M:%S',foreground=colours['pink']),
                 default_sep,
