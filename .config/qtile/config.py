@@ -84,7 +84,7 @@ keys = [
         desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "1234"]
+groups = [Group(i) for i in "12345"]
 
 for i in groups:
     keys.extend([
@@ -174,7 +174,7 @@ screens = [
                 default_sep,
                 widget.Clock(format='%Y-%m-%d %a %H:%M:%S',foreground=colours['pink']),
                 default_sep,
-                widget.Battery(padding=6,format='{char} {percent:2.0%} {hour:d}:{min:02d}', foreground=colours['green'], low_foreground=colours['red'], low_percentage=0.2,discharge_char='🔋',charge_char='⚡',update_interval=5),
+                #widget.Battery(padding=6,format='{char} {percent:2.0%} {hour:d}:{min:02d}', foreground=colours['green'], low_foreground=colours['red'], low_percentage=0.2,discharge_char='🔋',charge_char='⚡',update_interval=5),
             ],
             48 if high_dpi else 24,
         ),
